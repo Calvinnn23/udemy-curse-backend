@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de3ceb9-f8f9-4d50-a66a-e66b0680776d" name="Changes" comment="change aplication.properties">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventarios/src/main/java/calvin/inventarios/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventarios/src/main/java/calvin/inventarios/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventarios/target/classes/calvin/inventarios/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/inventarios/target/classes/calvin/inventarios/controller/ProductController.class" afterDir="false" />
-    </list>
+    <list default="true" id="6de3ceb9-f8f9-4d50-a66a-e66b0680776d" name="Changes" comment="change aplication.properties" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
