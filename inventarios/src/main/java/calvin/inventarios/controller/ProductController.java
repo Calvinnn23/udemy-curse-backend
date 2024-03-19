@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 //  http://localhost:8080/inventario-app
@@ -45,7 +47,32 @@ public class ProductController {
         }
         else
         {
-            throw new ResourceNotFindedException("Id: " + id + "not founded");
+            throw new ResourceNotFindedException("Id: " + id + "not found");
         }
+    }
+
+    @PutMapping("/products/{id}")
+    public ResponseEntity<Product> updateProduct(@PathVariable long id, @RequestBody Product productRecived){
+        Product product = this.productService.getProductById(id);
+        if(product == null){
+            throw new ResourceNotFindedException("Id: " + id + "not found");
+        }
+        product.setDescription(productRecived.getDescription());
+        product.setPrice(productRecived.getPrice());
+        product.setQuantity(productRecived.getQuantity());
+        this.productService.saveProduct(product);
+        return ResponseEntity.ok(product);
+    }
+
+    @DeleteMapping("/products/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteProduct(@PathVariable long id){
+        Product product = productService.getProductById(id);
+        if(product == null){
+            throw new ResourceNotFindedException("Id: " + id + "not found");
+        }
+        this.productService.deleteProductById(product.getIdProduct());
+        Map<String, Boolean> ans = new HashMap<>();
+        ans.put("delete", Boolean.TRUE);
+        return ResponseEntity.ok(ans);
     }
 }
